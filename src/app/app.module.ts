@@ -17,12 +17,13 @@ import { appRoutes } from './routes';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './profile/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { IEvent } from './event.model';
 
@@ -6,7 +7,7 @@ import { IEvent } from './event.model';
   providedIn: 'root',
 })
 export class EventService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   getEvents(): Observable<IEvent[] | unknown> {
     let subject: Subject<IEvent[] | unknown> = new Subject<IEvent[] | unknown>();
@@ -19,6 +20,15 @@ export class EventService {
 
   getEvent(id: number): IEvent | undefined {
     return EVENTS.find((event: IEvent) => event.id === id);
+  }
+
+  saveEvent(event: any): void{
+    event.id = 123;
+    event.sessions = [];
+
+    EVENTS.push(event);
+    console.log("EventSaved!");
+    this.router.navigate(['/']);
   }
 }
 

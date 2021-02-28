@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import { EventService } from '../services/event-service.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { EventService } from '../services/event-service.service';
 export class SiteHeaderComponent implements OnInit {
   public events: any[] = [];
   constructor(private eventService: EventService,
-              private router: Router) { }
+              private router: Router,
+              public authService: AuthService) { }
 
   ngOnInit(): void {
     this.eventService.getEvents()
