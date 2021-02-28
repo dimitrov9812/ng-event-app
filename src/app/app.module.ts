@@ -22,6 +22,7 @@ import { CreateSessionComponent } from './single-event/create-session.component'
 import { SessionListComponent } from './single-event/session-list/session-list.component';
 import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 import { DurationPipe } from './pipes/duration.pipe';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { DurationPipe } from './pipes/duration.pipe';
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    ModalComponent
   ],
   bootstrap: [EventAppComponent],
   providers: [
