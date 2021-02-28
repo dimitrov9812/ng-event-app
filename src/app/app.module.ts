@@ -16,10 +16,13 @@ import { Error404Component } from './errors/404.component';
 import { appRoutes } from './routes';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './profile/login.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
@@ -32,6 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
     SingleEventComponent,
     CreateEventComponent,
     ProfileComponent,
+    LoginComponent,
     Error404Component
   ],
   bootstrap: [EventAppComponent],

@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { IEvent } from '../services/event.model';
 
 @Component({
   selector: 'event-thumbnail',
@@ -6,6 +7,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls:['./event-thumbnail.component.css']
 })
 export class EventThumbnailComponent {
-  @Input('event') event: any;
+  @Input('event') event: IEvent;
   constructor() {}
 }
