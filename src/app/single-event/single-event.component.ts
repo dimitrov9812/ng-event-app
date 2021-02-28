@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleEventComponent implements OnInit {
   public event: any;
+  public isDirty: boolean = false;
   constructor(private eventService: EventService,
               private route: ActivatedRoute) { }
 
@@ -17,4 +18,7 @@ export class SingleEventComponent implements OnInit {
     this.event = this.eventService.getEvent(id);
   }
 
+  canDeactivate() {
+
+  }
 }

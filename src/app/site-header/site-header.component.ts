@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EventService } from '../services/event-service.service';
 
 @Component({
@@ -8,10 +9,17 @@ import { EventService } from '../services/event-service.service';
 })
 export class SiteHeaderComponent implements OnInit {
   public events: any[] = [];
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.events = this.eventService.getEvents();
+    this.eventService.getEvents()
+                     .subscribe((data: any) => {
+                         this.events = data;
+                      });
   }
 
+  navigateProfile() {
+    this.router.navigate(['/user/profile'])
+  }
 }

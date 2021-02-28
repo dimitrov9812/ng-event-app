@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  templateUrl: "./profile.component.html"
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
+  public isDirty: boolean = true;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  onCancel(): void {
+    console.log('clicked')
+    this.router.navigate(['/']);
   }
-
 }

@@ -10,6 +10,7 @@ import { EventsListComponent } from './events/events-list.component';
 import { EventThumbnailComponent} from './event-thumbnail/event-thumbnail.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { SingleEventComponent } from './single-event/single-event.component';
+import { Error404Component } from './errors/404.component';
 
 // Routes
 import { appRoutes } from './routes';
@@ -30,8 +31,27 @@ import { ProfileComponent } from './profile/profile.component';
     SiteHeaderComponent,
     SingleEventComponent,
     CreateEventComponent,
-    ProfileComponent
+    ProfileComponent,
+    Error404Component
   ],
-  bootstrap: [EventAppComponent]
+  bootstrap: [EventAppComponent],
+  providers: [
+    {provide: 'canDeactivate', useValue: checkDirtyState},
+    {provide: 'canDeactivateProfile', useValue: checkDirtyStateProfile}
+  ]
 })
 export class AppModule { }
+
+export function checkDirtyState(component: CreateEventComponent) {
+  if (component.isDirty) {
+    return window.confirm(' You have unsaved information, do you really want to cancel?');
+  }
+  return true;
+}
+
+export function checkDirtyStateProfile(component: ProfileComponent) {
+  if (component.isDirty) {
+    return window.confirm(' You have unsaved information, do you really want to cancel?');
+  }
+  return true;
+}

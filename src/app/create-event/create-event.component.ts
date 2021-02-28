@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
-
+  public isDirty: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
