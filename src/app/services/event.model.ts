@@ -4,7 +4,7 @@ export interface IEvent {
   name: string
   date: Date
   time: string
-  price: Number
+  price: string | number
   imageUrl: string
   location?: {
     address: string

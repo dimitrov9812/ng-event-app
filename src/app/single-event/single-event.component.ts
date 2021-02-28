@@ -12,6 +12,9 @@ export class SingleEventComponent implements OnInit {
   public event: any;
   public isDirty: boolean = false;
   public addMode: boolean = false;
+  public filterBy: string = 'all';
+  public sortBy: string = 'votes';
+
   constructor(private eventService: EventService,
               private route: ActivatedRoute) { }
 
@@ -35,5 +38,9 @@ export class SingleEventComponent implements OnInit {
 
   handleCancel(): void {
     this.addMode = false;
+  }
+
+  filterSession(): void {
+
   }
 }

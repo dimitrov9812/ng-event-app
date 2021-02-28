@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { ToasterService } from '../services/toaster.service';
 
 @Component({
   templateUrl: "./profile.component.html"
@@ -11,7 +12,8 @@ export class ProfileComponent {
   public profileForm: FormGroup;
 
   constructor(private router: Router,
-              private authService: AuthService) {}
+              private authService: AuthService,
+              private toastrService: ToasterService) {}
 
   ngOnInit() {
     let firstName: FormControl = new FormControl(this.authService.user.firstName, Validators.required);
