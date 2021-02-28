@@ -30,6 +30,11 @@ export class EventService {
     console.log("EventSaved!");
     this.router.navigate(['/']);
   }
+
+  updateEvent(event: IEvent) {
+    let index = EVENTS.findIndex(x => x.id == event.id);
+    EVENTS[index] = event;
+  }
 }
 
 const EVENTS: IEvent[] = [

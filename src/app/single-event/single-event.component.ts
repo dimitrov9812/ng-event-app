@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../services/event-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { IEvent, ISession } from '../services/event.model';
 
 @Component({
   selector: 'app-single-event',
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SingleEventComponent implements OnInit {
   public event: any;
   public isDirty: boolean = false;
+  public addMode: boolean = false;
   constructor(private eventService: EventService,
               private route: ActivatedRoute) { }
 
@@ -18,7 +20,20 @@ export class SingleEventComponent implements OnInit {
     this.event = this.eventService.getEvent(id);
   }
 
-  canDeactivate() {
+  addSession(): void {
+    this.addMode = true;
+  }
 
+  handleNewSessionSave(session: ISession) {
+    let nextId = this.event.sessions.length + 1;
+    console.log(nextId);
+    session.id = nextId;
+    this.event.sessions.push(session);
+    this.eventService.updateEvent(this.event);
+    this.addMode = false;
+  }
+
+  handleCancel(): void {
+    this.addMode = false;
   }
 }

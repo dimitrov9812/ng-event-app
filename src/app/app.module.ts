@@ -18,6 +18,9 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './profile/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateSessionComponent } from './single-event/create-session.component';
+import { SessionListComponent } from './single-event/session-list/session-list.component';
+import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -37,7 +40,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateEventComponent,
     ProfileComponent,
     LoginComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent,
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   bootstrap: [EventAppComponent],
   providers: [
