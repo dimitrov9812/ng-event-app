@@ -1,20 +1,20 @@
-import { ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SiteHeaderComponent } from './site-header.component';
+import { UpvoteComponent } from './upvote.component';
 
-describe('SiteHeaderComponent', () => {
-  let component: SiteHeaderComponent;
-  let fixture: ComponentFixture<SiteHeaderComponent>;
+describe('UpvoteComponent', () => {
+  let component: UpvoteComponent;
+  let fixture: ComponentFixture<UpvoteComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SiteHeaderComponent ]
+      declarations: [ UpvoteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SiteHeaderComponent);
+    fixture = TestBed.createComponent(UpvoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { EventService } from '../services/event-service.service';
@@ -14,6 +14,7 @@ export class SiteHeaderComponent implements OnInit {
   public searchTerm: string = '';
   public foundSessions: ISession[] = [];
   public isSearching: boolean = false;
+  @ViewChild('searchModal') searchModal: ElementRef;
 
   constructor(private eventService: EventService,
               private router: Router,
@@ -43,8 +44,6 @@ export class SiteHeaderComponent implements OnInit {
 
   navigate(id: Number) {
     this.router.navigate(['/events',id]);
-    setTimeout(() => {
-      location.reload();
-    }, 200);
+    console.log(this.searchModal.nativeElement('hide'));
   }
 }
