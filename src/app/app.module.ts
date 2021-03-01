@@ -24,6 +24,7 @@ import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.co
 import { DurationPipe } from './pipes/duration.pipe';
 import { ModalComponent } from './modal/modal.component';
 import { UpvoteComponent } from './upvote/upvote.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
