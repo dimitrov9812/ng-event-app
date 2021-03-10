@@ -24,7 +24,6 @@ import { CollapsibleWellComponent } from './collapsible-well/collapsible-well.co
 import { DurationPipe } from './pipes/duration.pipe';
 import { ModalComponent } from './modal/modal.component';
 import { UpvoteComponent } from './upvote/upvote.component';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -61,6 +60,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppModule { }
 
+// can moved outside of this module
 export function checkDirtyState(component: CreateEventComponent) {
   if (component.isDirty) {
     return window.confirm(' You have unsaved information, do you really want to cancel?');
